@@ -1,9 +1,9 @@
 //Computer picks randomly from array: Rock, Paper or Scissors.
 
 function computerPlay() {
-  let plays = ["Rock", "Paper", "Scissors"];
+  const plays = ["Rock", "Paper", "Scissors"];
   let randomComputerPlay = plays[Math.floor(Math.random() * plays.length)];
-  console.log("Computer plays:" + " " + randomComputerPlay);
+  //console.log("Computer plays:" + " " + randomComputerPlay);
 
   return randomComputerPlay;
 }
@@ -23,12 +23,11 @@ function playerPlay() {
 //Function to play one round of Rock-Paper-Scissors.
 
 function playRound(computerPlay, playerPlay) {
-  let paper = "Paper";
-  let rock = "Rock";
-  let scissors = "Scissors";
-  let win = false;
-  let playerScore = 0;
-  let compScore = 0;
+  const paper = "Paper";
+  const rock = "Rock";
+  const scissors = "Scissors";
+ 
+ 
   //Draw scenario
   if (playerPlay.toLowerCase() === computerPlay.toLowerCase()) {
     console.log("Draw!");
@@ -50,8 +49,10 @@ function playRound(computerPlay, playerPlay) {
         playerPlay.charAt(0).toUpperCase() +
         playerPlay.slice(1) +
         "."
+        
     );
-    compScore += 1;
+    compScore +=1;
+    
   }
   //Scenarios where the player wins.
   else if (
@@ -73,28 +74,30 @@ function playRound(computerPlay, playerPlay) {
     );
     playerScore += 1;
   }
-  console.log(playerScore);
-  console.log(compScore);
+  
 }
 
+//Function to determine winner
 
 //Function to decide the length of the game.
 
 function game() {
   let length = prompt("How many games do you want to play?");
-  let compRandom;
-  let playerPrompt;
+  playerScore = 0;
+  compScore = 0; 
+  
 
   for (let i = 0; i < length; i++) {
-    compRandom = computerPlay();
-    playerPrompt = prompt("Rock, paper, or scissors?");
-    playRound(compRandom, playerPrompt);  
-  }  
+    let compRandom = computerPlay();
+    let playerPrompt = prompt("Rock, paper, or scissors?");
+    let output = playRound(compRandom, playerPrompt);
+
+console.log(playerScore , compScore);
+
+  }
+  if(playerScore > compScore){console.log("VICTORY!")}
+  else if(playerScore < compScore){console.log("DEFEAT!")}
+  if(playerScore === compScore){console.log("DRAW!")};
 }
 
-/*
-let compRandom = computerPlay(); 
-let playerPrompt = prompt("Rock, paper, or scissors?");
-playRound(compRandom, playerPrompt)
-*/
 game();
