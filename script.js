@@ -82,12 +82,12 @@ function playRound(computerPlay, playerPlay) {
 //Function to decide the length of the game.
 
 function game() {
-  let length = prompt("How many games do you want to play?");
+  //let length = prompt("How many games do you want to play?");
   playerScore = 0;
   compScore = 0; 
   
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < 5; i++) {
     let compRandom = computerPlay();
     let playerPrompt = prompt("Rock, paper, or scissors?");
     let output = playRound(compRandom, playerPrompt);
