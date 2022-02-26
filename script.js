@@ -1,3 +1,5 @@
+//Computer picks randomly from array: Rock, Paper or Scissors.
+
 function computerPlay() {
   let plays = ["Rock", "Paper", "Scissors"];
   let randomComputerPlay = plays[Math.floor(Math.random() * plays.length)];
@@ -6,24 +8,32 @@ function computerPlay() {
   return randomComputerPlay;
 }
 
+//Random picker for the player, used for testing in the beginning.
+
+/*
 function playerPlay() {
   let plays = ["Rock", "Paper", "Scissors"];
   let randomPlayerPlay = plays[Math.floor(Math.random() * plays.length)];
   console.log("Player plays:" + " " + randomPlayerPlay);
 
   return randomPlayerPlay;
-}
+} 
+*/
 
-function oneRound(computerPlay, playerPlay) {
+//Function to play one round of Rock-Paper-Scissors.
+
+function playRound(computerPlay, playerPlay) {
   let paper = "Paper";
   let rock = "Rock";
   let scissors = "Scissors";
-
+  let win = false;
+  let playerScore = 0;
+  let compScore = 0;
   //Draw scenario
   if (playerPlay.toLowerCase() === computerPlay.toLowerCase()) {
     console.log("Draw!");
   }
-  //Scenarios where the computer wins
+  //Scenarios where the computer wins.
   else if (
     (computerPlay.toLowerCase() === rock.toLowerCase() &&
       playerPlay.toLowerCase() === scissors.toLowerCase()) ||
@@ -41,8 +51,9 @@ function oneRound(computerPlay, playerPlay) {
         playerPlay.slice(1) +
         "."
     );
+    compScore += 1;
   }
-  //Scenarios where the player wins
+  //Scenarios where the player wins.
   else if (
     (computerPlay.toLowerCase() === rock.toLowerCase() &&
       playerPlay.toLowerCase() === paper.toLowerCase()) ||
@@ -60,10 +71,30 @@ function oneRound(computerPlay, playerPlay) {
         computerPlay.slice(1) +
         "."
     );
+    playerScore += 1;
   }
+  console.log(playerScore);
+  console.log(compScore);
 }
 
-let compRandom = computerPlay(); /*.toLowerCase()*/
-let playerPrompt = window.prompt("Rock, paper, or scissors?");
-//let playerRandom = playerPlay()/*.toLowerCase()*/;
-oneRound(compRandom, playerPrompt);
+
+//Function to decide the length of the game.
+
+function game() {
+  let length = prompt("How many games do you want to play?");
+  let compRandom;
+  let playerPrompt;
+
+  for (let i = 0; i < length; i++) {
+    compRandom = computerPlay();
+    playerPrompt = prompt("Rock, paper, or scissors?");
+    playRound(compRandom, playerPrompt);  
+  }  
+}
+
+/*
+let compRandom = computerPlay(); 
+let playerPrompt = prompt("Rock, paper, or scissors?");
+playRound(compRandom, playerPrompt)
+*/
+game();
