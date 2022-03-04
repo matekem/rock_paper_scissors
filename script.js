@@ -3,29 +3,17 @@
 function computerPlay() {
   const plays = ["Rock", "Paper", "Scissors"];
   let randomComputerPlay = plays[Math.floor(Math.random() * plays.length)];
-  //console.log("Computer plays:" + " " + randomComputerPlay);
+  /*console.log("Computer plays:" + " " + randomComputerPlay);*/
 
   return randomComputerPlay;
 }
 
-//Random picker for the player, used for testing in the beginning.
-
-/*
-function playerPlay() {
-  let plays = ["Rock", "Paper", "Scissors"];
-  let randomPlayerPlay = plays[Math.floor(Math.random() * plays.length)];
-  console.log("Player plays:" + " " + randomPlayerPlay);
-
-  return randomPlayerPlay;
-} 
-*/
-
 //Function to play one round of Rock-Paper-Scissors.
 
 function playRound(computerPlay, playerPlay) {
-  const paper = "Paper";
-  const rock = "Rock";
-  const scissors = "Scissors";
+  paper = "Paper";
+  rock = "Rock";
+  scissors = "Scissors";
  
  
   //Draw scenario
@@ -85,19 +73,20 @@ function game() {
   //let length = prompt("How many games do you want to play?");
   playerScore = 0;
   compScore = 0; 
-  
 
-  for (let i = 0; i < 5; i++) {
-    let compRandom = computerPlay();
-    let playerPrompt = prompt("Rock, paper, or scissors?");
-    let output = playRound(compRandom, playerPrompt);
+  const rockBtn = document.querySelector('#rockBtn');
+  rockBtn.addEventListener('click', () => {
+  playRound(computerPlay(), "rock")});
 
-console.log(playerScore , compScore);
+  const paperBtn = document.querySelector('#paperBtn');
+  paperBtn.addEventListener('click', () => {
+  playRound(computerPlay(), "paper")});
 
-  }
-  if(playerScore > compScore){console.log("VICTORY!")}
-  else if(playerScore < compScore){console.log("DEFEAT!")}
-  if(playerScore === compScore){console.log("DRAW!")};
+  const scissorsBtn = document.querySelector('#scissorsBtn');
+  scissorsBtn.addEventListener('click', () => {
+  playRound(computerPlay(), "scissors");});
+
+
 }
-
+    
 game();
