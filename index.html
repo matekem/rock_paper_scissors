@@ -8,11 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id ="rockBtn">Rock</button>
-    <button id = "paperBtn">Paper</button>
-    <button id = "scissorsBtn">Scissors</button>
+    
 
-    <div id = "container"></div>
+    <div id = "results" class="roundResultBox">
+        <p id = "resultsInside"></p>
+    </div> 
+    <div class="buttonBox">
+        <div><input id = "rockBtn" type="image" src = IMG/rock.png value="" class="rockButtonStyle"></div>
+        <div><input id = "paperBtn" type="image" src =IMG/paper.png value="" class="paperButtonStyle"></div>
+        <div><input id = "scissorsBtn" type="image" src="IMG/scissors.png" value="" class="scissorsButtonStyle"></div>
+    </div>
+    
+    <div id = "scoreBoard" class = scoreBoardBox>
+        <p id="computerScore" class="cScore"></p>
+        <p id="playerScore" class="pScore"></p>
+    </div>
+    <div id="finalResultBox">
+        <p id = "finalResults"></p>
+    </div>
+    <div class="restartBox">
+        <input id = "restartBtn" type="button" value="Rematch?" class ="restartBtnStyle" >
+    </div>
+
+
+
     <script src="script.js"></script>
 </body>
 </html>

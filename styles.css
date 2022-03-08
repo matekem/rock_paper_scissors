@@ -1,0 +1,135 @@
+body{
+   display : flex;
+    flex-direction: column;
+    background: rgb(205,132,245);
+    background: -moz-linear-gradient(90deg, rgba(205,132,245,1) 0%, rgba(159,67,246,1) 25%, rgba(71,219,249,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(205,132,245,1) 0%, rgba(159,67,246,1) 25%, rgba(71,219,249,1) 100%);
+    background: linear-gradient(90deg, rgba(205,132,245,1) 0%, rgba(159,67,246,1) 25%, rgba(71,219,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cd84f5",endColorstr="#47dbf9",GradientType=1); 
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-items: center;
+    
+}
+#finalResultBox{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:100px;
+    margin: 0px;
+    padding: 0px;
+}
+.buttonBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rockButtonStyle{
+    margin: 15px;
+   border-radius: 30px;
+   width: 264px;
+   height: 322.5px;
+}
+
+.paperButtonStyle{
+    margin: 15px;
+   border-radius: 30px;
+   width: 264px;
+   height: 322.5px;
+}
+
+.scissorsButtonStyle{
+    margin: 15px;
+   border-radius: 30px;
+   width: 264px;
+   height: 322.5px;
+}
+.rockButtonStyle:hover{
+    transition: all 0.3s;
+    transform: scale(1.1,1.1);
+    border: black 3px solid;
+}
+.paperButtonStyle:hover{
+    
+    transform: scale(1.1,1.1);
+    transition:all 0.3s;
+    border: black 3px solid;
+}
+.scissorsButtonStyle:hover{
+    
+    transition: 0.3s;
+    border: black 3px solid;
+    transform: scale(1.1,1.1);
+}
+.rockButtonStyle:active{
+    transition-timing-function: ease-in-out;
+    transition: all 0.1s;
+    transform: scale(1,1);
+}
+.paperButtonStyle:active{
+    transition-timing-function: ease-in-out;
+    transition:all 0.1s;
+    transform: scale(1,1);
+}
+.scissorsButtonStyle:active{
+    transition-timing-function: ease-in-out;
+    transition: all 0.1s;
+    transform: scale(1,1);
+}
+.roundResultBox{
+    display: inline-block;
+  font-size: 80px;
+  color: rgb(240, 240, 240);
+  animation: fadeIn linear 7s;
+}
+.scoreBoardBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding :65px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.cScore{
+    
+    color:white;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin : 0px;
+    padding: 0px;
+}
+.pScore{
+    
+    color:white;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin : 0px;
+    padding: 0px;
+}
+
+.restartBtnStyle{
+    opacity: 0;
+    padding: 30px;
+    font-size: 35px;
+    color: black;
+    background-color: aqua;
+    border:none;
+    border-radius: 20px;
+    background-color: beige;
+}
+.restartBtnStyle:hover{
+    transition: 0.3s;
+    border: black 3px solid;
+    transform: scale(1.1,1.1);
+}
+.restartBtnStyle:active{
+    transition-timing-function: ease-in-out;
+    transition: all 0.1s;
+    transform: scale(1,1);
+}
+
+
