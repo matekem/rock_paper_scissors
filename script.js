@@ -110,18 +110,25 @@ function buttonFunctions() {
 }
 
 function computerScoreDisplay() {
+  const compScoreNumber = document.querySelector('#computerScoreNumber')
   const resultsContainer = document.querySelector("#scoreBoard");
   const computerScoreActual = document.querySelector("#computerScore");
-
-  computerScoreActual.textContent = "Computer score: " + compScore;
+  
+  
+  computerScoreActual.textContent = "COMPUTER: " + compScore;
   resultsContainer.appendChild(computerScoreActual);
 }
 function playerScoreDisplay() {
   const resultsContainer = document.querySelector("#scoreBoard");
+  
   const playerScoreActual = document.querySelector("#playerScore");
 
-  playerScoreActual.textContent = "Player score: " + playerScore;
+  const playerScoreNumber = document.querySelector('#playerScoreNumber');
+
+  
+  playerScoreActual.textContent = "PLAYER: " + playerScore;
   resultsContainer.appendChild(playerScoreActual);
+  
 }
 
 //Function to decide the length of the game.
