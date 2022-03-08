@@ -81,9 +81,9 @@ body{
 }
 .roundResultBox{
     display: inline-block;
-  font-size: 80px;
+  font-size: 350%;
   color: rgb(240, 240, 240);
-  animation: fadeIn linear 7s;
+  
 }
 .scoreBoardBox{
     display: flex;
