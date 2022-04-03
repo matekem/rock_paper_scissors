@@ -20,11 +20,27 @@ const cScoreText = document.querySelector("#c-score-text")
 const pScoreText = document.querySelector("#p-score-text")
 const playerScoreBox = document.querySelector(".playerScoreBox")
 const computerScoreBox = document.querySelector(".computerScoreBox")
+const computerImage = document.querySelector("#computer-image")
+const playerImage = document.querySelector("#player-image")
+const roundPlayBox = document.querySelector(".round-play-box")
 
 //Computer picks randomly from array: Rock, Paper or Scissors.
 function computerPlay() {
   let randomComputerPlay = plays[Math.floor(Math.random() * plays.length)];
+  
+  if(randomComputerPlay == "Rock"){
+    document.getElementById("computer-image").src="IMG/rock.png"
+  }
+  else if(randomComputerPlay == "Paper"){
+    document.getElementById("computer-image").src="IMG/paper.png"
+  }
+  else if(randomComputerPlay == "Scissors"){
+    document.getElementById("computer-image").src="IMG/scissors.png"
+  }
+
   return randomComputerPlay;
+
+
 }
 
 //Function to play one round of Rock-Paper-Scissors.
@@ -57,7 +73,7 @@ function playRound(computerPlay, playerPlay) {
       playerPlay.slice(1) +
       ".";
     resultsContainer.appendChild(resultsInside);
-
+    
     compScore += 1;
 
     if (compScore == 5) {
@@ -94,25 +110,62 @@ function playRound(computerPlay, playerPlay) {
     }
   }
 }
+/*
+function changeImage(){
+  rockBtn.addEventListener("click", () =>{
+    playerImage.setAttribute("style", "opacity:1")
+    document.getElementById("player-image").src="IMG/rock.png"
+    roundPlayBox.appendChild(playerImage)
+  })
+  paperBtn.addEventListener("click", () =>{
+    playerImage.setAttribute("style", "opacity:1")
+    document.getElementById("player-image").src="IMG/paper.png"
+    roundPlayBox.appendChild(playerImage)
+  })
+  scissorsBtn.addEventListener("click", () =>{
+    roundPlayBox.appendChild(playerImage)
+    playerImage.setAttribute("style", "opacity:1")
+    document.getElementById("player-image").src="IMG/scissors.png"
+
+  })
+}*/
 
 function buttonFunctions() {
   rockBtn.addEventListener("click", () => {
+    
     playRound(computerPlay(), "rock");
     computerScoreDisplay();
     playerScoreDisplay();
+    
+    playerImage.setAttribute("style", "opacity:1")
+    document.getElementById("player-image").src="IMG/rock.png"
+    computerImage.setAttribute("style", "opacity:1")
   });
 
   paperBtn.addEventListener("click", () => {
     playRound(computerPlay(), "paper");
     computerScoreDisplay();
     playerScoreDisplay();
+    
+    playerImage.setAttribute("style", "opacity:1")
+    document.getElementById("player-image").src="IMG/paper.png"
+    computerImage.setAttribute("style", "opacity:1")
   });
 
   scissorsBtn.addEventListener("click", () => {
     playRound(computerPlay(), "scissors");
     computerScoreDisplay();
     playerScoreDisplay();
+    
+    playerImage.setAttribute("style", "opacity:1")
+    document.getElementById("player-image").src="IMG/scissors.png"
+
+    computerImage.setAttribute("style", "opacity:1")
+    
+    
   });
+
+  
 }
 
 function computerScoreDisplay() {
@@ -149,8 +202,8 @@ function gameOver() {
   scissorsOff.disabled = true;
 
   createRestartBtn.innerHTML = "Rematch?";
-  finalResultBox.appendChild(createRestartBtn);
-  createRestartBtn.setAttribute("style", "opacity:1;");
+  
+  createRestartBtn.setAttribute("style", "opacity:1",);
   createRestartBtn.addEventListener("click", () => {
     restart();
   });

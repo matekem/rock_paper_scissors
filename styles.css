@@ -16,7 +16,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px;
+    margin-top: 25px;
     padding: 0px;
 }
 #finalResults{
@@ -33,9 +33,10 @@ body{
     margin-right: 80px;
     margin-top:10px;
     padding:0px;
-   border-radius: 30px;
-   width: 264px;
-   height: 322.5px;
+    border-radius: 30px;
+    width: 264px;
+    height: 322.5px;
+    transition: all 0.1s;
 }
 
 
@@ -58,8 +59,7 @@ body{
     transform: scale(1.1,1.1);
 }
 .rockButtonStyle:active{
-    transition-timing-function: ease-in-out;
-    transition: all 0.1s;
+    
     transform: scale(1,1);
 }
 .paperButtonStyle:active{
@@ -75,26 +75,56 @@ body{
 
 /*#############################*/
 
+.roundResultBox{
+    height:10vh
+}
 .roundResultBox > p{
     
   font-size: 300%;
   color: rgb(240, 240, 240);
   padding: 15px;
   margin:0px;
+
   
 }
 .playerScoreBox{
     padding-right:0px;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .computerScoreBox{
-    padding-left:0px
+    padding-left:0px;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.round-play-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:25%;
+}
+.round-play-box > img{
+    margin:20px;
+    border-radius: 7.5px;/*
+   width: 66px;
+   height: 80.625px;*/
+   width:calc(264*0.30px);
+   height:calc(322.5*0.30px);
+   grid-column-start: 2;
+   grid-column-end: 2;
+
+    opacity: 0;
 }
 .scoreBoardBox{
     
     display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(2, 50%);
-    width:50vw
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(2,80px);
+    width:60vw
    
 }
 .cScore{
@@ -136,7 +166,7 @@ body{
     border:none;
     border-radius: 20px;
     background-color: beige;
-    margin: 30px;
+    transition: all 0.1s;
 }
 .restartBtnStyle:hover{
     transition: 0.3s;
@@ -145,7 +175,7 @@ body{
 }
 .restartBtnStyle:active{
     transition-timing-function: ease-in-out;
-    transition: all 0.1s;
+    
     transform: scale(1,1);
 }
 
