@@ -49,6 +49,7 @@ function playRound(computerPlay, playerPlay) {
   paper = "Paper";
   rock = "Rock";
   scissors = "Scissors";
+  
 
   //Draw scenario
   if (playerPlay.toLowerCase() === computerPlay.toLowerCase()) {
