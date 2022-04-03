@@ -16,6 +16,10 @@ const rockOff = document.querySelector("#rockBtn");
 const paperOff = document.querySelector("#paperBtn");
 const scissorsOff = document.querySelector("#scissorsBtn");
 const createRestartBtn = document.querySelector("#restartBtn");
+const cScoreText = document.querySelector("#c-score-text")
+const pScoreText = document.querySelector("#p-score-text")
+const playerScoreBox = document.querySelector(".playerScoreBox")
+const computerScoreBox = document.querySelector(".computerScoreBox")
 
 //Computer picks randomly from array: Rock, Paper or Scissors.
 function computerPlay() {
@@ -112,13 +116,22 @@ function buttonFunctions() {
 }
 
 function computerScoreDisplay() {
-  computerScoreActual.textContent = "COMPUTER: " + compScore;
-  scoreboard.appendChild(computerScoreActual);
+
+  computerScoreActual.textContent = compScore;
+  cScoreText.textContent = "COMPUTER"
+
+  scoreboard.appendChild(computerScoreBox);
+  computerScoreBox.appendChild(cScoreText)
+  cScoreText.appendChild(computerScoreActual)
 }
 
 function playerScoreDisplay() {
-  playerScoreActual.textContent = "PLAYER: " + playerScore;
-  scoreboard.appendChild(playerScoreActual);
+  playerScoreActual.textContent = playerScore
+  pScoreText.textContent = "PLAYER";
+  
+  scoreboard.appendChild(playerScoreBox);
+  playerScoreBox.appendChild(pScoreText)
+  pScoreText.appendChild(playerScoreActual);
 }
 
 function game() {

@@ -1,5 +1,5 @@
 body{
-   display : flex;
+    display : flex;
     flex-direction: column;
     background: rgb(205,132,245);
     background: -moz-linear-gradient(90deg, rgba(205,132,245,1) 0%, rgba(159,67,246,1) 25%, rgba(71,219,249,1) 100%);
@@ -20,33 +20,26 @@ body{
     padding: 0px;
 }
 #finalResults{
-    font-size:350%;
+    font-size:250%;
 }
+/*BUTTON STYLING*/
 .buttonBox{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.rockButtonStyle{
-    margin: 15px;
+.rockButtonStyle, .paperButtonStyle, .scissorsButtonStyle{
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top:10px;
+    padding:0px;
    border-radius: 30px;
    width: 264px;
    height: 322.5px;
 }
 
-.paperButtonStyle{
-    margin: 15px;
-   border-radius: 30px;
-   width: 264px;
-   height: 322.5px;
-}
 
-.scissorsButtonStyle{
-    margin: 15px;
-   border-radius: 30px;
-   width: 264px;
-   height: 322.5px;
-}
+
 .rockButtonStyle:hover{
     transition: all 0.3s;
     transform: scale(1.1,1.1);
@@ -79,23 +72,30 @@ body{
     transition: all 0.1s;
     transform: scale(1,1);
 }
-.roundResultBox{
-    display: block;
-  font-size: 350%;
+
+/*#############################*/
+
+.roundResultBox > p{
+    
+  font-size: 300%;
   color: rgb(240, 240, 240);
-  padding: 0px;
+  padding: 15px;
   margin:0px;
   
 }
+.playerScoreBox{
+    padding-right:0px;
+}
+.computerScoreBox{
+    padding-left:0px
+}
 .scoreBoardBox{
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    padding :0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    width:50vw
+   
 }
 .cScore{
     font-weight: lighter;
@@ -103,8 +103,20 @@ body{
     font-size: 35px;
     text-align: center;
     margin : 0px;
-    padding: 35px;
+    padding: 0px;
     
+}
+.c-score-text {
+    
+    text-align: center;
+    font-weight: 600;
+    font-size: 2vw;
+}
+.p-score-text{
+    
+    text-align: center;
+    font-weight: 600;
+    font-size: 2vw;
 }
 .pScore{
     font-weight: lighter;
@@ -112,7 +124,7 @@ body{
     font-size: 35px;
     text-align: center;
     margin : 0px;
-    padding: 35px;
+    padding: 0px;
 }
 
 .restartBtnStyle{
@@ -136,12 +148,5 @@ body{
     transition: all 0.1s;
     transform: scale(1,1);
 }
-.playerScoreBox{
-    display: inline-block;
-    
-}
-.computerScoreBox{
-    display: inline-block;
-   
-}
+
 
