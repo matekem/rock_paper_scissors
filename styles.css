@@ -83,6 +83,8 @@ body{
     display: block;
   font-size: 350%;
   color: rgb(240, 240, 240);
+  padding: 0px;
+  margin:0px;
   
 }
 .scoreBoardBox{
@@ -91,7 +93,7 @@ body{
     justify-content: center;
     align-items: center;
     
-    padding :65px;
+    padding :0px;
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
