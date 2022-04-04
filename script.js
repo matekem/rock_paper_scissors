@@ -84,7 +84,7 @@ function playRound(computerPlay, playerPlay) {
     compScore += 1;
 
     if (compScore == 5) {
-      finalResult.textContent = "Game over! Computer wins!";
+      finalResult.textContent = "Game over, computer wins!";
       finalResultBox.appendChild(finalResult);
       gameOver();
     }
@@ -112,7 +112,7 @@ function playRound(computerPlay, playerPlay) {
     playerScore += 1;
 
     if (playerScore == 5) {
-      finalResult.textContent = "Congratulations, you've won the game!";
+      finalResult.textContent = "Congratulations, you win!";
       finalResultBox.appendChild(finalResult);
       gameOver();
     }
@@ -188,6 +188,8 @@ function game() {
   compScore = 0;
 
   buttonFunctions();
+  
+ 
 }
 
 //End game
