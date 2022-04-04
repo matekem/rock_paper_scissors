@@ -1,4 +1,4 @@
-//Declarations
+//Selectors
 const plays = ["Rock", "Paper", "Scissors"];
 const resultsContainer = document.querySelector("#results");
 const resultsInside = document.querySelector("#resultsInside");
@@ -111,25 +111,8 @@ function playRound(computerPlay, playerPlay) {
     }
   }
 }
-/*
-function changeImage(){
-  rockBtn.addEventListener("click", () =>{
-    playerImage.setAttribute("style", "opacity:1")
-    document.getElementById("player-image").src="IMG/rock.png"
-    roundPlayBox.appendChild(playerImage)
-  })
-  paperBtn.addEventListener("click", () =>{
-    playerImage.setAttribute("style", "opacity:1")
-    document.getElementById("player-image").src="IMG/paper.png"
-    roundPlayBox.appendChild(playerImage)
-  })
-  scissorsBtn.addEventListener("click", () =>{
-    roundPlayBox.appendChild(playerImage)
-    playerImage.setAttribute("style", "opacity:1")
-    document.getElementById("player-image").src="IMG/scissors.png"
 
-  })
-}*/
+//Button functionality
 
 function buttonFunctions() {
   rockBtn.addEventListener("click", () => {
@@ -160,7 +143,6 @@ function buttonFunctions() {
     
     playerImage.setAttribute("style", "opacity:1")
     document.getElementById("player-image").src="IMG/scissors.png"
-
     computerImage.setAttribute("style", "opacity:1")
     
     
@@ -168,6 +150,8 @@ function buttonFunctions() {
 
   
 }
+
+//Display scores
 
 function computerScoreDisplay() {
 
@@ -188,12 +172,16 @@ function playerScoreDisplay() {
   pScoreText.appendChild(playerScoreActual);
 }
 
+//Play game
+
 function game() {
   playerScore = 0;
   compScore = 0;
 
   buttonFunctions();
 }
+
+//End game
 
 function gameOver() {
   rockOff.disabled = true;
@@ -209,8 +197,11 @@ function gameOver() {
     restart();
   });
 }
+
+//Restart game
+
 function restart() {
-  window.location.reload(true);
+  game()
 }
 
 game();
