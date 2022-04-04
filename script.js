@@ -23,6 +23,8 @@ const computerScoreBox = document.querySelector(".computerScoreBox")
 const computerImage = document.querySelector("#computer-image")
 const playerImage = document.querySelector("#player-image")
 const roundPlayBox = document.querySelector(".round-play-box")
+const roundCounter = document.querySelector("#round-counter")
+let roundCount=1
 
 //Computer picks randomly from array: Rock, Paper or Scissors.
 function computerPlay() {
@@ -50,9 +52,12 @@ function playRound(computerPlay, playerPlay) {
   rock = "Rock";
   scissors = "Scissors";
   
+  
+  roundCounter.textContent = `ROUND ${roundCount}`
 
   //Draw scenario
   if (playerPlay.toLowerCase() === computerPlay.toLowerCase()) {
+    roundCount+=1;
     resultsInside.textContent = "Draw!";
     resultsContainer.appendChild(resultsInside);
   }
@@ -65,6 +70,7 @@ function playRound(computerPlay, playerPlay) {
     (computerPlay.toLowerCase() === paper.toLowerCase() &&
       playerPlay.toLowerCase() === rock.toLowerCase())
   ) {
+    roundCount+=1;
     resultsInside.textContent =
       "You lose! " +
       computerPlay.charAt(0).toUpperCase() +
@@ -92,6 +98,7 @@ function playRound(computerPlay, playerPlay) {
     (computerPlay.toLowerCase() === paper.toLowerCase() &&
       playerPlay.toLowerCase() === scissors.toLowerCase())
   ) {
+    roundCount+=1;
     resultsInside.textContent =
       "You win! " +
       playerPlay.charAt(0).toUpperCase() +
@@ -110,6 +117,8 @@ function playRound(computerPlay, playerPlay) {
       gameOver();
     }
   }
+  
+  
 }
 
 //Button functionality
@@ -201,7 +210,7 @@ function gameOver() {
 //Restart game
 
 function restart() {
-  game()
+  window.location.reload(true);
 }
 
 game();
