@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>R-P-S Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <span id="round-counter"></span>
-    <div id = "scoreBoard" class = "scoreBoardBox">
+    <div id="scoreBoard" class="scoreBoardBox">
+      <div class="computerScoreBox">
+        <p id="c-score-text" class="c-score-text"></p>
 
-        <div class="computerScoreBox">
-            <p id = c-score-text class="c-score-text"></p>
-            
-            <p id="computerScore" class="cScore"></p>
-        </div>
+        <p id="computerScore" class="cScore"></p>
+      </div>
 
-        
-        
-        <div class="playerScoreBox">
-            <p id="p-score-text" class = "p-score-text"></p>
-            <p id="playerScore" class="pScore"></p>
-        </div>
+      <div class="playerScoreBox">
+        <p id="p-score-text" class="p-score-text"></p>
+        <p id="playerScore" class="pScore"></p>
+      </div>
 
-        <div class="round-play-box">
-            <img id="player-image">
-            <img id="computer-image">
-        </div>
-    
-    
-
+      <div class="round-play-box">
+        <img id="player-image" />
+        <img id="computer-image" />
+      </div>
     </div>
-    <div id = "results" class="roundResultBox">
-        <p id = "resultsInside"></p>
-    </div> 
+    <div id="results" class="roundResultBox">
+      <p id="resultsInside"></p>
+    </div>
     <div class="buttonBox">
-        <div><input id = "rockBtn" type="image" src = IMG/rock.png value="" class="rockButtonStyle"></div>
-        <div><input id = "paperBtn" type="image" src =IMG/paper.png value="" class="paperButtonStyle"></div>
-        <div><input id = "scissorsBtn" type="image" src="IMG/scissors.png" value="" class="scissorsButtonStyle"></div>
+      <div>
+        <input id = "rockBtn" type="image" src = IMG/rock.png value=""
+        class="rockButtonStyle">
+      </div>
+      <div>
+        <input id = "paperBtn" type="image" src =IMG/paper.png value=""
+        class="paperButtonStyle">
+      </div>
+      <div>
+        <input
+          id="scissorsBtn"
+          type="image"
+          src="IMG/scissors.png"
+          value=""
+          class="scissorsButtonStyle"
+        />
+      </div>
     </div>
-    
-   
+
     <div id="finalResultBox">
-        <p id = "finalResults"></p>
+      <p id="finalResults"></p>
     </div>
     <div class="restartBox">
-        <input id = "restartBtn" type="button" value="Rematch?" class ="restartBtnStyle" >
+      <input
+        id="restartBtn"
+        type="button"
+        value="Rematch?"
+        class="restartBtnStyle"
+      />
     </div>
-
-
-
-   
-</body>
+  </body>
 </html>
