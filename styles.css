@@ -31,7 +31,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin:0px
+    margin:0px;
+    position:sticky;
 }
 .rockButtonStyle, .paperButtonStyle, .scissorsButtonStyle{
     margin-left: 80px;
